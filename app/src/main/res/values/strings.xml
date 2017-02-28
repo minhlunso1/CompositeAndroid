@@ -3,4 +3,5 @@
     <string name="color_create">#ff9800</string>
     <string name="color_resume">#c0ca33</string>
     <string name="color_start">#ffab91</string>
+    <string name="with">with</string>
 </resources>

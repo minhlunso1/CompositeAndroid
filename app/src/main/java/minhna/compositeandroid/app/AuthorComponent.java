@@ -16,4 +16,5 @@ public interface AuthorComponent {
     void inject(MainActivity activity);
 
     Author provideAuthor();
+    String provideAwardsString();
 }

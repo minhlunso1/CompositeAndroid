@@ -7,9 +7,11 @@ package minhna.compositeandroid.model;
 public class Author {
 
     public String name;
+    public Award award;
 
-    public Author(String name) {
+    public Author(String name, Award award) {
         this.name = name;
+        this.award = award;
     }
 
 }

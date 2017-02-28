@@ -72,7 +72,13 @@ public class MainActivity extends CompositeActivity {
                 }
             }, 1000);
         }
-        Toast.makeText(this, authorComponent.provideAuthor().name, Toast.LENGTH_SHORT).show();
+    }
+
+    private void displayAuthor() {
+        StringBuilder str = new StringBuilder();
+        str.append(authorComponent.provideAuthor().name).append(' ').append(getString(R.string.with))
+                .append(' ').append(authorComponent.provideAwardsString());
+        Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
     }
 
     protected void setBack() {
@@ -117,5 +123,6 @@ public class MainActivity extends CompositeActivity {
 
     public void revealColor(View view) {
         revealColor();
+        displayAuthor();
     }
 }
