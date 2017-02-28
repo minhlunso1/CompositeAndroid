@@ -68,25 +68,28 @@ public class MainActivity extends CompositeActivity {
                     viewPoint.setTag(colorTag);
                     viewPoint.callOnClick();
                     onResumeDone=true;
-                    onStop();
+                    setBack();//cannot call onStop because when the app is finished - it calls onStop again
                 }
             }, 1000);
         }
         Toast.makeText(this, authorComponent.provideAuthor().name, Toast.LENGTH_SHORT).show();
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
+    protected void setBack() {
         if (onResumeDone) {
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
+                    colorTag = getString(R.string.color_create);
                     viewPoint.setTag(colorTag);
                     viewPoint.callOnClick();
                 }
             }, 1000);
         }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
     }
 
     private void revealColor() {

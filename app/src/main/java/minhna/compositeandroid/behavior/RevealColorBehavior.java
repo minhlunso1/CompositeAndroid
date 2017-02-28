@@ -73,11 +73,6 @@ public class RevealColorBehavior implements ActivityBehaviour {
 
                 switch (activityClass) {
                     case ActivityClass.MAIN:
-                        MainActivity activity = mainActivity.get();
-                        if (activity != null) {
-                            if (activity.onResumeDone)
-                                activity.colorTag = activity.getString(R.string.color_create);
-                        }
                         break;
                 }
 
