@@ -5,10 +5,14 @@ import android.graphics.Point;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import minhna.compositeandroid.R;
+import minhna.compositeandroid.app.AuthorComponent;
+import minhna.compositeandroid.app.AuthorModule;
+import minhna.compositeandroid.app.DaggerAuthorComponent;
 import minhna.compositeandroid.behavior.RevealColorBehavior;
 import minhna.compositeandroid.model.ActivityClass;
 
@@ -18,6 +22,7 @@ public class MainActivity extends CompositeActivity {
     private Handler handler;
     public boolean onStartDone = false;
     public boolean onResumeDone = false;
+    private AuthorComponent authorComponent;
 
     @BindView(R.id.reveal)
     RevealColorView revealColorView;
@@ -33,6 +38,9 @@ public class MainActivity extends CompositeActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        authorComponent = DaggerAuthorComponent.builder()
+                .authorModule(new AuthorModule())
+                .build();
         handler = new Handler();
     }
 
@@ -64,12 +72,13 @@ public class MainActivity extends CompositeActivity {
                 }
             }, 1000);
         }
+        Toast.makeText(this, authorComponent.provideAuthor().name, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onStop() {
+        super.onStop();
         if (onResumeDone) {
-            super.onStop();
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
