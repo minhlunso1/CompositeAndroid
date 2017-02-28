@@ -4,14 +4,74 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="minhna.compositeandroid.MainActivity">
+    tools:context="minhna.compositeandroid.view.MainActivity">
+    <minhna.compositeandroid.view.RevealColorView
+        android:id="@+id/reveal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/orange"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:id="@+id/tv"
+        android:layout_centerInParent="true"/>
+    <View
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:id="@+id/view_point"
+        android:layout_centerInParent="true"
+        android:onClick="revealColor"/>
+
+    <!--https://gist.github.com/markushi/68ce8df77bed164b6275-->
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="56dip"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_marginBottom="8dp">-->
+
+        <!--<Button-->
+            <!--android:id="@+id/btn_1"-->
+            <!--android:layout_width="0dip"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@drawable/selectable_item_selector"-->
+            <!--android:tag="#8bc34a"-->
+            <!--android:layout_marginRight="8dip"-->
+            <!--android:text="1"-->
+            <!--android:textColor="@android:color/white"/>-->
+
+        <!--<Button-->
+            <!--android:id="@+id/btn_2"-->
+            <!--android:layout_width="0dip"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@drawable/selectable_item_selector"-->
+            <!--android:tag="#3f51b5"-->
+            <!--android:layout_marginRight="8dip"-->
+            <!--android:text="2"-->
+            <!--android:textColor="@android:color/white"/>-->
+
+        <!--<Button-->
+            <!--android:id="@+id/btn_3"-->
+            <!--android:layout_width="0dip"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@drawable/selectable_item_selector"-->
+            <!--android:tag="#00bcd4"-->
+            <!--android:text="3"-->
+            <!--android:layout_marginRight="8dip"-->
+            <!--android:textColor="@android:color/white"/>-->
+
+        <!--<Button-->
+            <!--android:id="@+id/btn_4"-->
+            <!--android:layout_width="0dip"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@drawable/selectable_item_selector"-->
+            <!--android:tag="#e91e63"-->
+            <!--android:text="4"-->
+            <!--android:textColor="@android:color/white"/>-->
+    <!--</LinearLayout>-->
 </RelativeLayout>
